@@ -29,7 +29,7 @@
 <html>
    
    <head>
-      <title>Login Page</title>
+      <title>Technology Boot Camp - Login</title>
       
       <style type = "text/css">
          body {

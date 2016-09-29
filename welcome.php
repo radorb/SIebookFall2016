@@ -4,7 +4,7 @@
 <html">
    
    <head>
-      <title>Welcome </title>
+      <title>Technology Boot Camp - Welcome</title>
    </head>
    
    <body>
