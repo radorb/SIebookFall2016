@@ -1,6 +1,5 @@
 <?php
 
-ob_start();
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
 $password="SIebookFall2016"; // Mysql password 
@@ -11,7 +10,7 @@ $tbl_name="users"; // Table name
 mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 mysql_select_db("$db_name")or die("cannot select DB");
 
-// Define $myusername and $mypassword 
+// username and password sent from form 
 $myusername=$_POST['myusername']; 
 $mypassword=$_POST['mypassword']; 
 
@@ -37,5 +36,4 @@ header("location:login_success.php");
 else {
 echo "Wrong Username or Password";
 }
-ob_end_flush();
 ?>
