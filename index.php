@@ -54,70 +54,70 @@
 
 <div id="chapter1" class="container-fluid">
   <h1>Chapter 1</h1>
-  <p><a href="index.html">Chapter 1 Link 1</a></p>
-  <p><a href="index.html">Chapter 1 Link 2</a></p>
-  <p><a href="index.html">Chapter 1 Link 3</a></p>
-  <p><a href="index.html">Chapter 1 Link 4</a></p>
-  <p><a href="index.html">Chapter 1 Link 5</a></p>
-  <p><a href="index.html">Chapter 1 Link 6</a></p>
-  <p><a href="index.html">Chapter 1 Link 7</a></p>
-  <p><a href="index.html">Chapter 1 Link 8</a></p>
-  <p><a href="index.html">Chapter 1 Link 9</a></p>
-  <p><a href="index.html">Chapter 1 Link 10</a></p>
+  <p><a href="index.php">Chapter 1 Link 1</a></p>
+  <p><a href="index.php">Chapter 1 Link 2</a></p>
+  <p><a href="index.php">Chapter 1 Link 3</a></p>
+  <p><a href="index.php">Chapter 1 Link 4</a></p>
+  <p><a href="index.php">Chapter 1 Link 5</a></p>
+  <p><a href="index.php">Chapter 1 Link 6</a></p>
+  <p><a href="index.php">Chapter 1 Link 7</a></p>
+  <p><a href="index.php">Chapter 1 Link 8</a></p>
+  <p><a href="index.php">Chapter 1 Link 9</a></p>
+  <p><a href="index.php">Chapter 1 Link 10</a></p>
   
 </div>
 <div id="chapter2" class="container-fluid">
   <h1>Chapter 2</h1>
-  <p><a href="index.html">Chapter 2 Link 1</a></p>
-  <p><a href="index.html">Chapter 2 Link 2</a></p>
-  <p><a href="index.html">Chapter 2 Link 3</a></p>
-  <p><a href="index.html">Chapter 2 Link 4</a></p>
-  <p><a href="index.html">Chapter 2 Link 5</a></p>
-  <p><a href="index.html">Chapter 2 Link 6</a></p>
-  <p><a href="index.html">Chapter 2 Link 7</a></p>
-  <p><a href="index.html">Chapter 2 Link 8</a></p>
-  <p><a href="index.html">Chapter 2 Link 9</a></p>
-  <p><a href="index.html">Chapter 2 Link 10</a></p>
+  <p><a href="index.php">Chapter 2 Link 1</a></p>
+  <p><a href="index.php">Chapter 2 Link 2</a></p>
+  <p><a href="index.php">Chapter 2 Link 3</a></p>
+  <p><a href="index.php">Chapter 2 Link 4</a></p>
+  <p><a href="index.php">Chapter 2 Link 5</a></p>
+  <p><a href="index.php">Chapter 2 Link 6</a></p>
+  <p><a href="index.php">Chapter 2 Link 7</a></p>
+  <p><a href="index.php">Chapter 2 Link 8</a></p>
+  <p><a href="index.php">Chapter 2 Link 9</a></p>
+  <p><a href="index.php">Chapter 2 Link 10</a></p>
   
 </div>
 <div id="chapter3" class="container-fluid">
   <h1>Chapter 3</h1>
-  <p><a href="index.html">Chapter 3 Link 1</a></p>
-  <p><a href="index.html">Chapter 3 Link 2</a></p>
-  <p><a href="index.html">Chapter 3 Link 3</a></p>
-  <p><a href="index.html">Chapter 3 Link 4</a></p>
-  <p><a href="index.html">Chapter 3 Link 5</a></p>
-  <p><a href="index.html">Chapter 3 Link 6</a></p>
-  <p><a href="index.html">Chapter 3 Link 7</a></p>
-  <p><a href="index.html">Chapter 3 Link 8</a></p>
-  <p><a href="index.html">Chapter 3 Link 9</a></p>
-  <p><a href="index.html">Chapter 3 Link 10</a></p>
+  <p><a href="index.php">Chapter 3 Link 1</a></p>
+  <p><a href="index.php">Chapter 3 Link 2</a></p>
+  <p><a href="index.php">Chapter 3 Link 3</a></p>
+  <p><a href="index.php">Chapter 3 Link 4</a></p>
+  <p><a href="index.php">Chapter 3 Link 5</a></p>
+  <p><a href="index.php">Chapter 3 Link 6</a></p>
+  <p><a href="index.php">Chapter 3 Link 7</a></p>
+  <p><a href="index.php">Chapter 3 Link 8</a></p>
+  <p><a href="index.php">Chapter 3 Link 9</a></p>
+  <p><a href="index.php">Chapter 3 Link 10</a></p>
 </div>
 <div id="chapter41" class="container-fluid">
   <h1>Chapter 4 Section 1</h1>
-  <p><a href="index.html">Chapter 4 Section 1 Link 1</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 2</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 3</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 4</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 5</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 6</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 7</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 8</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 9</a></p>
-  <p><a href="index.html">Chapter 4 Section 1 Link 10</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 1</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 2</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 3</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 4</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 5</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 6</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 7</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 8</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 9</a></p>
+  <p><a href="index.php">Chapter 4 Section 1 Link 10</a></p>
 </div>
 <div id="chapter42" class="container-fluid">
   <h1>Chapter 4 Section 2</h1>
-  <p><a href="index.html">Chapter 4 Section 2 Link 1</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 2</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 3</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 4</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 5</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 6</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 7</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 8</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 9</a></p>
-  <p><a href="index.html">Chapter 4 Section 2 Link 10</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 1</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 2</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 3</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 4</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 5</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 6</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 7</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 8</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 9</a></p>
+  <p><a href="index.php">Chapter 4 Section 2 Link 10</a></p>
 </div>
 
 </body>
