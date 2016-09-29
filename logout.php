@@ -1,7 +1,5 @@
-<?php
-   session_start();
-   
-   if(session_destroy()) {
-      header("Location: login.php");
-   }
+// Put this code in first line of web page. 
+<?php 
+session_start();
+session_destroy();
 ?>
