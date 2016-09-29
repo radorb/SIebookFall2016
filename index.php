@@ -45,6 +45,7 @@
               <li><a href="#chapter42">Chapter 4-2</a></li>
             </ul>
           </li>
+          <li><a href="login.php">Login</a></li>
         </ul>
       </div>
     </div>
