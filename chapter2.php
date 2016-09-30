@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Technology Boot Camp</a>
+      <a class="navbar-brand" href="#">Technology Boot Camp</a>
     </div>
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -63,7 +63,7 @@
 
 <div id="body1" class="container-fluid">
   <h1>Welcome to the Technology Boot Camp eBook Website!</h1>
-  <h3>Please select a link.</h3>
+  <h2>Please select a link.</h2>
   <p><a href="chapter1.php">Security</a></p>
   <p><a href="chapter2.php">Infrastructure</a></p>
   <p><a href="chapter3.php">Mobile Development</a></p>
