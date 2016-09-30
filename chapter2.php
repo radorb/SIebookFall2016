@@ -1,5 +1,5 @@
 <?php
-   
+   include("config.php");
 ?>
 
 <html>
@@ -62,11 +62,23 @@
   </div>
 </nav>
 
-<div id="body1" class="container-fluid">
-  <h1>Infrastructure</h1>
-  <h3>Please select a link.</h3>
-  
-</div>
+<?php
+include("config.php");
+
+$sql = "SELECT title FROM chapters WHERE number=2";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         echo '<div id="body1" class="container-fluid"><h1>'. $row['title']. '</h1></div>';
+     }
+} else {
+     echo "0 results";
+}
+
+$conn->close();
+?>
 
 </body>
 </html>
