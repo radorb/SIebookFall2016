@@ -17,8 +17,12 @@
   #chapter1 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
   #chapter2 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
   #chapter3 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
-  #chapter41 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
-  #chapter42 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
+  input.box {
+      transform: translate(0%, 50%);
+  }
+  input.button {
+      transform: translate(0%, 50%);
+  }
   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -36,14 +40,19 @@
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#chapter1">Chapter 1</a></li>
-          <li><a href="#chapter2">Chapter 2</a></li>
-          <li><a href="#chapter3">Chapter 3</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Chapter 4 <span class="caret"></span></a>
+          <li><a href="#chapter1">Security</a></li>
+          <li><a href="#chapter2">Infrastructure</a></li>
+          <li><a href="#chapter3">Mobile Development</a></li>
+<!--          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Chapter 4 <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#chapter41">Chapter 4-1</a></li>
               <li><a href="#chapter42">Chapter 4-2</a></li>
             </ul>
+          </li>-->
+          <li><form action = "" method = "post">
+                  <input type = "text" name = "search" class = "box" autofocus="autofocus"/>
+                  <input type = "submit" class="button" value = " Search "/>
+               </form>
           </li>
           <li><a href="login.php">Login</a></li>
         </ul>
@@ -53,71 +62,45 @@
 </nav>
 
 <div id="chapter1" class="container-fluid">
-  <h1>Chapter 1</h1>
-  <p><a href="index.php">Chapter 1 Link 1</a></p>
-  <p><a href="index.php">Chapter 1 Link 2</a></p>
-  <p><a href="index.php">Chapter 1 Link 3</a></p>
-  <p><a href="index.php">Chapter 1 Link 4</a></p>
-  <p><a href="index.php">Chapter 1 Link 5</a></p>
-  <p><a href="index.php">Chapter 1 Link 6</a></p>
-  <p><a href="index.php">Chapter 1 Link 7</a></p>
-  <p><a href="index.php">Chapter 1 Link 8</a></p>
-  <p><a href="index.php">Chapter 1 Link 9</a></p>
-  <p><a href="index.php">Chapter 1 Link 10</a></p>
+  <h1>Security</h1>
+  <p><a href="index.php">Security Link 1</a></p>
+  <p><a href="index.php">Security Link 2</a></p>
+  <p><a href="index.php">Security Link 3</a></p>
+  <p><a href="index.php">Security Link 4</a></p>
+  <p><a href="index.php">Security Link 5</a></p>
+  <p><a href="index.php">Security Link 6</a></p>
+  <p><a href="index.php">Security Link 7</a></p>
+  <p><a href="index.php">Security Link 8</a></p>
+  <p><a href="index.php">Security Link 9</a></p>
+  <p><a href="index.php">Security Link 10</a></p>
   
 </div>
 <div id="chapter2" class="container-fluid">
-  <h1>Chapter 2</h1>
-  <p><a href="index.php">Chapter 2 Link 1</a></p>
-  <p><a href="index.php">Chapter 2 Link 2</a></p>
-  <p><a href="index.php">Chapter 2 Link 3</a></p>
-  <p><a href="index.php">Chapter 2 Link 4</a></p>
-  <p><a href="index.php">Chapter 2 Link 5</a></p>
-  <p><a href="index.php">Chapter 2 Link 6</a></p>
-  <p><a href="index.php">Chapter 2 Link 7</a></p>
-  <p><a href="index.php">Chapter 2 Link 8</a></p>
-  <p><a href="index.php">Chapter 2 Link 9</a></p>
-  <p><a href="index.php">Chapter 2 Link 10</a></p>
+  <h1>Infrastructure</h1>
+  <p><a href="index.php">Infrastructure Link 1</a></p>
+  <p><a href="index.php">Infrastructure Link 2</a></p>
+  <p><a href="index.php">Infrastructure Link 3</a></p>
+  <p><a href="index.php">Infrastructure Link 4</a></p>
+  <p><a href="index.php">Infrastructure Link 5</a></p>
+  <p><a href="index.php">Infrastructure Link 6</a></p>
+  <p><a href="index.php">Infrastructure Link 7</a></p>
+  <p><a href="index.php">Infrastructure Link 8</a></p>
+  <p><a href="index.php">Infrastructure Link 9</a></p>
+  <p><a href="index.php">Infrastructure Link 10</a></p>
   
 </div>
 <div id="chapter3" class="container-fluid">
-  <h1>Chapter 3</h1>
-  <p><a href="index.php">Chapter 3 Link 1</a></p>
-  <p><a href="index.php">Chapter 3 Link 2</a></p>
-  <p><a href="index.php">Chapter 3 Link 3</a></p>
-  <p><a href="index.php">Chapter 3 Link 4</a></p>
-  <p><a href="index.php">Chapter 3 Link 5</a></p>
-  <p><a href="index.php">Chapter 3 Link 6</a></p>
-  <p><a href="index.php">Chapter 3 Link 7</a></p>
-  <p><a href="index.php">Chapter 3 Link 8</a></p>
-  <p><a href="index.php">Chapter 3 Link 9</a></p>
-  <p><a href="index.php">Chapter 3 Link 10</a></p>
-</div>
-<div id="chapter41" class="container-fluid">
-  <h1>Chapter 4 Section 1</h1>
-  <p><a href="index.php">Chapter 4 Section 1 Link 1</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 2</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 3</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 4</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 5</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 6</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 7</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 8</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 9</a></p>
-  <p><a href="index.php">Chapter 4 Section 1 Link 10</a></p>
-</div>
-<div id="chapter42" class="container-fluid">
-  <h1>Chapter 4 Section 2</h1>
-  <p><a href="index.php">Chapter 4 Section 2 Link 1</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 2</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 3</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 4</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 5</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 6</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 7</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 8</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 9</a></p>
-  <p><a href="index.php">Chapter 4 Section 2 Link 10</a></p>
+  <h1>Mobile Development</h1>
+  <p><a href="index.php">Mobile Development Link 1</a></p>
+  <p><a href="index.php">Mobile Development Link 2</a></p>
+  <p><a href="index.php">Mobile Development Link 3</a></p>
+  <p><a href="index.php">Mobile Development Link 4</a></p>
+  <p><a href="index.php">Mobile Development Link 5</a></p>
+  <p><a href="index.php">Mobile Development Link 6</a></p>
+  <p><a href="index.php">Mobile Development Link 7</a></p>
+  <p><a href="index.php">Mobile Development Link 8</a></p>
+  <p><a href="index.php">Mobile Development Link 9</a></p>
+  <p><a href="index.php">Mobile Development Link 10</a></p>
 </div>
 
 </body>
