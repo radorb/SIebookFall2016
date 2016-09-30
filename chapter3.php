@@ -17,10 +17,10 @@
   #body1 {padding-top:50px;}
 /*  #chapter2 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}
   #chapter3 {padding-top:50px;height:500px;border-bottom: thin solid #000000;}*/
-  input.box {
+  input.sbox {
       transform: translate(0%, 50%);
   }
-  input.button {
+  input.sbutton {
       transform: translate(0%, 50%);
   }
   </style>
@@ -35,11 +35,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Technology Boot Camp</a>
+      <!--<a class="nav navbar-nav" href="#">Technology Boot Camp</a>-->
     </div>
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
+          <li><a href="index.php">Technology Boot Camp</a></li>
           <li><a href="chapter1.php">Security</a></li>
           <li><a href="chapter2.php">Infrastructure</a></li>
           <li><a href="chapter3.php">Mobile Development</a></li>
@@ -50,8 +51,8 @@
             </ul>
           </li>-->
           <li><form action = "" method = "post">
-                  <input type = "text" name = "search" class = "box" autofocus="autofocus"/>
-                  <input type = "submit" class="button" value = " Search "/>
+                  <input type = "text" name = "search" class = "sbox"/>
+                  <input type = "submit" class="sbutton" value = " Search "/>
                </form>
           </li>
           <li><a href="login.php">Login</a></li>
@@ -62,47 +63,10 @@
 </nav>
 
 <div id="body1" class="container-fluid">
-  <h1>Welcome to the Technology Boot Camp eBook Website!</h1>
-  <h2>Please select a link.</h2>
-  <p><a href="chapter1.php">Security</a></p>
-  <p><a href="chapter2.php">Infrastructure</a></p>
-  <p><a href="chapter3.php">Mobile Development</a></p>
-<!--  <p><a href="index.php">Security Link 4</a></p>
-  <p><a href="index.php">Security Link 5</a></p>
-  <p><a href="index.php">Security Link 6</a></p>
-  <p><a href="index.php">Security Link 7</a></p>
-  <p><a href="index.php">Security Link 8</a></p>
-  <p><a href="index.php">Security Link 9</a></p>
-  <p><a href="index.php">Security Link 10</a></p>-->
-  
-</div>
-<!--<div id="chapter2" class="container-fluid">
-  <h1>Infrastructure</h1>
-  <p><a href="index.php">Infrastructure Link 1</a></p>
-  <p><a href="index.php">Infrastructure Link 2</a></p>
-  <p><a href="index.php">Infrastructure Link 3</a></p>
-  <p><a href="index.php">Infrastructure Link 4</a></p>
-  <p><a href="index.php">Infrastructure Link 5</a></p>
-  <p><a href="index.php">Infrastructure Link 6</a></p>
-  <p><a href="index.php">Infrastructure Link 7</a></p>
-  <p><a href="index.php">Infrastructure Link 8</a></p>
-  <p><a href="index.php">Infrastructure Link 9</a></p>
-  <p><a href="index.php">Infrastructure Link 10</a></p>
-  
-</div>
-<div id="chapter3" class="container-fluid">
   <h1>Mobile Development</h1>
-  <p><a href="index.php">Mobile Development Link 1</a></p>
-  <p><a href="index.php">Mobile Development Link 2</a></p>
-  <p><a href="index.php">Mobile Development Link 3</a></p>
-  <p><a href="index.php">Mobile Development Link 4</a></p>
-  <p><a href="index.php">Mobile Development Link 5</a></p>
-  <p><a href="index.php">Mobile Development Link 6</a></p>
-  <p><a href="index.php">Mobile Development Link 7</a></p>
-  <p><a href="index.php">Mobile Development Link 8</a></p>
-  <p><a href="index.php">Mobile Development Link 9</a></p>
-  <p><a href="index.php">Mobile Development Link 10</a></p>
-</div>-->
+  <h3>Please select a link.</h3>
+  
+</div>
 
 </body>
 </html>
