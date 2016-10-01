@@ -103,7 +103,7 @@ if ($result2->num_rows > 0) {
      echo "0 results";
 }
 
-$conn->close();
+$db->close();
 ?>
 
 </body>
