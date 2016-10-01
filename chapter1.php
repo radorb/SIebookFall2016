@@ -77,16 +77,16 @@ if ($result1->num_rows > 0) {
      echo "0 results";
 }
 
-$sql2 = "SELECT title FROM sections WHERE chapters_rec_id=0";
+$sql2 = "SELECT rec_id, title FROM sections WHERE chapters_rec_id=0 ORDER BY number";
 $result2 = $db->query($sql2);
 
 if ($result2->num_rows > 0) {
-     $sections_rec_id = 0;
      // output data of each row
      while($row2 = $result2->fetch_assoc()) {
+         $sections_rec_id = $row2['rec_id'];
          echo '<h3>'. $row2['title']. '</h3>';
          
-              $sql3 = "SELECT title, url FROM links WHERE sections_rec_id='$sections_rec_id'";
+              $sql3 = "SELECT title, url FROM links WHERE sections_rec_id='$sections_rec_id' ORDER BY seqNumber";
               $result3 = $db->query($sql3);
 
               if ($result3->num_rows > 0) {
@@ -97,7 +97,6 @@ if ($result2->num_rows > 0) {
               } else {
                    echo "0 results";
               }
-         $sections_rec_id++;
      }
 } else {
      echo "0 results";
