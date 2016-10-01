@@ -71,7 +71,33 @@ $result = $db->query($sql);
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         echo '<div id="body1" class="container-fluid"><h1>'. $row['title']. '</h1></div>';
+         echo '<div id="body1" class="container-fluid"><h1>'. $row['title']. '</h1>';
+     }
+} else {
+     echo "0 results";
+}
+
+$sql2 = "SELECT title FROM sections WHERE chapters_rec_id=1";
+$result2 = $db->query($sql2);
+
+if ($result2->num_rows > 0) {
+     $sections_rec_id = 0;
+     // output data of each row
+     while($row2 = $result2->fetch_assoc()) {
+         echo '<h3>'. $row2['title']. '</h3>';
+         
+              $sql3 = "SELECT title, url FROM links WHERE sections_rec_id='$sections_rec_id'";
+              $result3 = $db->query($sql3);
+
+              if ($result3->num_rows > 0) {
+                   // output data of each row
+                   while($row3 = $result3->fetch_assoc()) {
+                        echo '<p><a href="'. $row3['url']. '">'. $row3['title']. '</a></p>';
+                   }
+              } else {
+                   echo "0 results";
+              }
+         $sections_rec_id++;
      }
 } else {
      echo "0 results";
