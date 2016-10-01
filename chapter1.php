@@ -65,19 +65,20 @@
 <?php
 include("config.php");
 
-$sql1 = "SELECT title FROM chapters WHERE number=1";
+$sql1 = "SELECT rec_id, title FROM chapters WHERE number=1";
 $result1 = $db->query($sql1);
 
 if ($result1->num_rows > 0) {
      // output data of each row
      while($row1 = $result1->fetch_assoc()) {
+         $chapters_rec_id = $row1['rec_id'];
          echo '<div id="body1" class="container-fluid"><h1>'. $row1['title']. '</h1>';
      }
 } else {
      echo "0 results";
 }
 
-$sql2 = "SELECT rec_id, title FROM sections WHERE chapters_rec_id=0 ORDER BY number";
+$sql2 = "SELECT rec_id, title FROM sections WHERE chapters_rec_id='$chapters_rec_id' ORDER BY number";
 $result2 = $db->query($sql2);
 
 if ($result2->num_rows > 0) {
