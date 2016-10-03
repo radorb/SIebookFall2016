@@ -100,12 +100,12 @@ unset($title);
 	    $temp = $_GET['rec_id'];
 	    if($temp == $rec_id){
 		// Lets set our selected chapter
-		echo '<option value="'.$rec_id.'" selected>'.$rec_id.’</option>';
+		echo '<option value="'.$rec_id.'" selected>'.$rec_id.'</option>';
 	    }else{
-		echo '<option value="'.$rec_id.'">'.$rec_id.’</option>';
+		echo '<option value="'.$rec_id.'">'.$rec_id.'</option>';
 	    }
 	}else{
-	    echo '<option value="'.$rec_id.'">'.$rec_id.’</option>';			}
+	    echo '<option value="'.$rec_id.'">'.$rec_id.'</option>';			}
                        
 }
     echo "</select>";
@@ -118,5 +118,3 @@ echo "</body></html>";
 
 
 ?>
-
-
