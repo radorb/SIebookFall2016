@@ -1,48 +1,77 @@
 <?php
+// including the database connection file
+include_once("config.php");
 include('master.php');
 include('session.php');
-include("config.php");
-
-$result = $db->query("SELECT number, title FROM chapters ORDER BY number");
+ 
+if(isset($_POST['update']))
+{    
+    $id = (int)$_POST['id'];
     
-echo "<br>";
-echo '<div id="body1" class="container-fluid" align = "center">';
-echo '<h3>Edit Existing Link</h3>';
-echo '<br>';
-echo "<label>Select Chapter:&nbsp;</label><select name='number'>";
-echo '<option value="0">Chapter</option>';
-
-while ($row = $result->fetch_assoc()) {
-
-    unset($number, $title);
-    $number = $row['number'];
-    $title = $row['title']; 
-    echo '<option value="'.$number.'">'.$title.'</option>';
-                 
+    $number=(int)$_POST['number'];
+    $title=$_POST['title'];
+    $url=$_POST['url'];
+    
+    // checking empty fields
+    if(empty($number) || empty($title) || empty($url)) {            
+        if(empty($number)) {
+            echo "<br/><font color='red'>Number field is empty.</font><br/>";
+        }
+        
+        if(empty($title)) {
+            echo "<font color='red'>Title field is empty.</font><br/>";
+        }
+        
+        if(empty($url)) {
+            echo "<font color='red'>URL field is empty.</font><br/>";
+        }
+        
+    } else {    
+        //updating the table
+        $result = mysqli_query($db, "UPDATE links SET number='$number',title='$title',url='$url' WHERE rec_id=$id");
+        
+        //redirectig to the display page.
+        header("Location: listLinks.php");
+    }
 }
-
-echo "</select>";
-
-echo '<br>';
-echo '<br>';
-
-echo '<form action = "" method = "post">';
-echo     '<label>Link Number:&nbsp;</label><input type = "number" name = "editnumber" min="1" class = "box" /><br /><br />';
-echo     '<label>Link Title:&nbsp;</label><input type = "text" name = "edittitle" class = "box" /><br/><br />';
-echo     '<label>Link URL:&nbsp;</label><input type = "text" name = "editurl" class = "box" /><br/><br />';
-echo     '<label>Link Tags:&nbsp;</label><input type = "text" name = "edittags" class = "box" /><br/><br />';
-echo     '<input type = "submit" value = " Submit "/>&nbsp;<input type = "submit" value = " Delete "/>';
-echo '</form>';
-
-echo '<br>';
-echo '<h3>Add New Link</h3>';
-echo '<br>';
-
-echo '<form action = "" method = "post">';
-echo     '<label>Link Number:&nbsp;</label><input type = "number" name = "addnumber" min="1" class = "box" /><br /><br />';
-echo     '<label>Link Title:&nbsp;</label><input type = "text" name = "addtitle" class = "box" /><br/><br />';
-echo     '<label>Link URL:&nbsp;</label><input type = "text" name = "addurl" class = "box" /><br/><br />';
-echo     '<label>Link Tags:&nbsp;</label><input type = "text" name = "addtags" class = "box" /><br/><br />';
-echo     '<input type = "submit" value = " Submit "/><br />';
-echo '</form>';
 ?>
+<?php
+//getting id from url
+$id = $_GET['id'];
+ 
+//selecting data associated with this particular id
+$result = mysqli_query($db, "SELECT * FROM links WHERE rec_id=$id");
+ 
+while($res = mysqli_fetch_array($result))
+{
+    $number = $res['number'];
+    $title = $res['title'];
+    $url = $res['url'];
+}
+?>
+ 
+<div id="body1" class="container-fluid" align = "center">
+    <br/><a href='javascript:self.history.back();'>Go Back</a>
+    <br/><br/>
+    
+    <form name="form1" method="post" action="editLinks.php">
+        <table border="0">
+            <tr> 
+                <td>Number</td>
+                <td><input type="number" name="number" min="1" value="<?php echo $number;?>"></td>
+            </tr>
+            <tr> 
+                <td>Title</td>
+                <td><input type="text" name="title" value="<?php echo $title;?>"></td>
+            </tr>
+            <tr> 
+                <td>URL</td>
+                <td><input type="text" name="url" value="<?php echo $url;?>"></td>
+            </tr>
+            <tr>
+                <td><input type="hidden" name="id" value="<?php echo $_GET['id'];?>"></td>
+                <td><input type="submit" name="update" value="Update"></td>
+            </tr>
+        </table>
+    </form>
+</div>
