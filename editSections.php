@@ -48,7 +48,7 @@ echo '<br>';
 //////////////////  This will end the first drop down list ///////////
 
 //////////        Starting of second drop downlist /////////
-echo "<label>Select Section:&nbsp;</label><select name='subcat'><option value=''>Select Section</option>";
+echo "<label>Select Section:&nbsp;</label><select name='subcat'>Select Section</option>";
 foreach ($db->query($quer) as $noticia) {
 echo  "<option value='$noticia[title]'>$noticia[title]</option>";
 }
