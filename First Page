@@ -1,4 +1,5 @@
 <?php
+echo "<html><head><title>MIS 44048</title></head><body>";
 echo "Welcome to MIS 44048 Fall 2016!";
 
 $username = "root";
@@ -12,80 +13,108 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 	} 
 
+
 //Querying the Data from the tables - Html code and Php Code communication - Chapters DropDown 
-echo "<form>";
+echo "<form method='GET'>";
 $chapter_sql = $conn->query("select rec_id,title FROM chapters");
-echo "<html>";
-    echo "<body>";
     echo "<p>Select a Chapter";
-    echo "<select name='chap_rec_id'>";
+    echo "<select name='chap_rec_id' onchange='this.form.submit()' selected='selected'>";
+    echo "<option value='' selected />";
     echo "</p>";
 
     while ($row = $chapter_sql->fetch_assoc()) {
-
-                  unset($title);
-                  $chap_rec_id = $row['rec_id'];
-                  $chap_title = $row['title']; 
-                  echo '<option value="'.$chap_rec_id.'">'.$chap_title.'</option>';                 
-	}	
+	unset($title);
+	$chap_rec_id = $row['rec_id'];
+	$chap_title = $row['title'];
+	
+	if(isset($_GET['chap_rec_id'])){
+	    $temp = $_GET['chap_rec_id'];
+	    if($temp == $chap_rec_id){
+		// Lets set our selected chapter
+		echo '<option value="'.$chap_rec_id.'" selected>'.$chap_title.'</option>';
+	    }else{
+		echo '<option value="'.$chap_rec_id.'">'.$chap_title.'</option>';
+	    }
+	}else{
+	    echo '<option value="'.$chap_rec_id.'">'.$chap_title.'</option>';			}
+	}
+		
     echo "</select>";
-    echo "</body>";
-    echo "</html>";
 echo "</form>";
 // END - Chapters DropDown
 
 //Save the selected option on the Chapters DropDown
-if(isset($_POST['chap_rec_id'])){
-$selected_chapter = $_POST['chap_rec_id'];  // Storing Selected Value In Variable
+if(isset($_GET['chap_rec_id'])){
+$selected_chapter = $_GET['chap_rec_id'];  // Storing Selected Value In Variable
 echo "You have selected :" .$selected_chapter;  // Displaying Selected Value
 }
 
-    
+ if(isset($_GET['chap_rec_id'])){
+     $id = $_GET['chap_rec_id'];   
 //Querying the Data from the tables - Html code and Php Code communication - Sections DropDown 
-$section_sql = $conn->query("select chapters_rec_id,title FROM sections");
-echo "<html>";
-    echo "<body>";
+$section_sql = $conn->query("select chapters_rec_id,title FROM sections WHERE chapters_rec_id='$id'");
+echo "<form method='GET'>";
+echo "<input type='hidden' name='chap_rec_id' value='$id' />";
     echo "<p>Select a Section";
-    echo "<select name='chapters_rec_id'>";
+    echo "<select name='chapters_rec_id' onchange='this.form.submit()' >";
     echo "</p>";
 
     while ($row = $section_sql ->fetch_assoc()) {
-
-                  unset($title);
-                  $sec_rec_id = $row['chapters_rec_id'];
-                  $sec_title = $row['title']; 
-                  echo '<option value="'.$sec_rec_id.'">'.$sec_title.'</option>';                 
+unset($title);
+   $sec_rec_id = $row['chapters_rec_id'];
+   $sec_title = $row['title']; 
+	
+	if(isset($_GET['chapters_rec_id'])){
+	    $temp = $_GET['chapters_rec_id'];
+	    if($temp == $sec_rec_id){
+		// Lets set our selected chapter
+		echo '<option value="'.$sec_rec_id.'" selected>'.$sec_title.'</option>';
+	    }else{
+		echo '<option value="'.$sec_rec_id.'">'.$sec_title.'</option>';
+	    }
+	}else{
+	    echo '<option value="'.$sec_rec_id.'">'.$sec_title.'</option>';			}              
 	}
     echo "</select>";
-    echo "</body>";
-    echo "</html>";
+echo "</form>";
  // END - Sections DropDown
-   
+
+//if(isset($_GET['chapters_rec_id'])){
+//$_SESSION['chapters_rec_id'] = $_GET['chapters_rec_id'];
+//}
+
+if(isset($_GET['chapters_rec_id'])){   
+$chapter = $_GET['chapters_rec_id'];
 //Querying the Data from the tables - Html code and Php Code communication - Links DropDown 
-$links_sql = $conn->query("select rec_id,title FROM Links");
-echo "<html>";
-    echo "<body>";
+$links_sql = $conn->query("select rec_id,title FROM Links WHERE rec_id='$chapter'");
     echo "<p>Select a Link";
     echo "<select name='rec_id'>";
     echo "</p>";
 
     while ($row = $links_sql->fetch_assoc()) {
-
-                  unset($title);
-                  $rec_id = $row['rec_id'];
-                  $title = $row['title']; 
-                  echo '<option value="'.$rec_id.'">'.$title.'</option>';                 
+unset($title);
+   $rec_id = $row['rec_id'];
+   $title = $row['title']; 
+	
+	if(isset($_GET['rec_id'])){
+	    $temp = $_GET['rec_id'];
+	    if($temp == $rec_id){
+		// Lets set our selected chapter
+		echo '<option value="'.$rec_id.'" selected>'.$rec_id.'</option>';
+	    }else{
+		echo '<option value="'.$rec_id.'">'.$rec_id.'</option>';
+	    }
+	}else{
+	    echo '<option value="'.$rec_id.'">'.$rec_id.'</option>';			}
+                       
 }
     echo "</select>";
-    echo "</body>";
-    echo "</html>";
 // END - Links DropDown
-   
+ }
+ }  
 $conn->close();
-    
+echo "</body></html>";    
+
+
+
 ?>
-
-
-
-
-
