@@ -14,11 +14,11 @@ if(isset($_POST['update']))
     // checking empty fields
     if(empty($number) || empty($title)) {            
         if(empty($number)) {
-            echo "<br/><font color='red'>Number field is empty.</font><br/>";
+            echo "<br/><font color='red'>Section Number field is empty.</font><br/>";
         }
         
         if(empty($title)) {
-            echo "<font color='red'>Title field is empty.</font><br/>";
+            echo "<font color='red'>Section Title field is empty.</font><br/>";
         }   
     } else {    
         //updating the table
@@ -50,11 +50,11 @@ while($res = mysqli_fetch_array($result))
     <form name="form1" method="post" action="editSections.php">
         <table border="0">
             <tr> 
-                <td>Number</td>
+                <td>Section Number</td>
                 <td><input type="number" name="number" min="1" value="<?php echo $number;?>"></td>
             </tr>
             <tr> 
-                <td>Title</td>
+                <td>Section Title</td>
                 <td><input type="text" name="title" value="<?php echo $title;?>"></td>
             </tr>
             <tr>

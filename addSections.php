@@ -1,40 +1,37 @@
-<div id="body1" class="container-fluid" align = "center">
 <?php
-//including the database connection file
-include_once("config.php");
+include("config.php");
 include('master.php');
 include('session.php');
- 
-if(isset($_POST['Submit'])) {    
-    $number = $_POST['number'];
-    $title = $_POST['title'];
-        
-    // checking empty fields
-    if(empty($number) || empty($title)) {                
-        if(empty($number)) {
-            echo "<br/><font color='red'>Number field is empty.</font><br/>";
-        }
-        
-        if(empty($title)) {
-            echo "<font color='red'>Title field is empty.</font><br/>";
-        }
-        
-        //link to the previous page
-        echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-    } else { 
-        // if all the fields are filled (not empty)
-        $query = "SELECT MAX(rec_id) FROM sections";
-        $result1 = mysqli_query($db,  $query);
-        $row1 = mysqli_fetch_row($result1);
-        $largestNumber = (int)$row1[0]+1;
-        $chapterNumber = (int)$number;
-        //insert data to database
-        $result = mysqli_query($db, "INSERT INTO sections(rec_id,number,title) VALUES('$largestNumber','$chapterNumber','$title')");
-        
-        //display success message
-        echo "<br/><font color='green'>Section added successfully.";
-        echo "<br/><a href='listSections.php'>View Result</a>";
-    }
+
+$id = $_GET['id'];
+
+if(empty($id)) {
+    echo '<div id="body1" class="container-fluid" align = "center">';
+    echo "<br><font color='red'>Please go back and select a chapter!</font><br/>";
+    echo "<br><a href='javascript:self.history.back();'>Go Back</a>";
+    exit;
 }
 ?>
+    
+<div id="body1" class="container-fluid" align = "center">
+    <br/><a href='javascript:self.history.back();'>Go Back</a>
+    <br/><br/>
+    
+    <form action="addSectionsR.php" method="post" name="form1">
+        <table width="25%" border="0">
+            <input type="hidden" name="chapterId" value="<?php echo $_GET["id"]; ?>">
+            <tr> 
+                <td>Section Number</td>
+                <td><input type="number" name="number" min="1"></td>
+            </tr>
+            <tr> 
+                <td>Section Title</td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr> 
+                <td></td>
+                <td><input type="submit" name="Submit" value="Add"></td>
+            </tr>
+        </table>
+    </form>
 </div>

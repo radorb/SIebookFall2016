@@ -50,11 +50,11 @@ while($res = mysqli_fetch_array($result))
     <form name="form1" method="post" action="editChapters.php">
         <table border="0">
             <tr> 
-                <td>Number</td>
+                <td>Chapter Number</td>
                 <td><input type="number" name="number" min="1" value="<?php echo $number;?>"></td>
             </tr>
             <tr> 
-                <td>Title</td>
+                <td>Chapter Title</td>
                 <td><input type="text" name="title" value="<?php echo $title;?>"></td>
             </tr>
             <tr>

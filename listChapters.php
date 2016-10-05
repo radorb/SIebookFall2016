@@ -6,7 +6,10 @@ $result = mysqli_query($db, "SELECT * FROM chapters ORDER BY number");
 ?>
  
 <div id="body1" class="container-fluid" align = "center">
-    <br/><a href="addChapters.html">Add New Chapter</a><br/><br/>
+    <br>
+    <a href="welcome.php">Welcome Menu</a>
+    <br>
+    <br/><a href="addChapters.php">Add New Chapter</a><br/><br/>
  
     <table width='80%' border=0>
         <tr bgcolor='#CCCCCC'>

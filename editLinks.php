@@ -15,20 +15,20 @@ if(isset($_POST['update']))
     // checking empty fields
     if(empty($number) || empty($title) || empty($url)) {            
         if(empty($number)) {
-            echo "<br/><font color='red'>Number field is empty.</font><br/>";
+            echo "<br/><font color='red'>Link Number field is empty.</font><br/>";
         }
         
         if(empty($title)) {
-            echo "<font color='red'>Title field is empty.</font><br/>";
+            echo "<font color='red'>Link Title field is empty.</font><br/>";
         }
         
         if(empty($url)) {
-            echo "<font color='red'>URL field is empty.</font><br/>";
+            echo "<font color='red'>Link URL field is empty.</font><br/>";
         }
         
     } else {    
         //updating the table
-        $result = mysqli_query($db, "UPDATE links SET number='$number',title='$title',url='$url' WHERE rec_id=$id");
+        $result = mysqli_query($db, "UPDATE links SET seqNumber='$number',title='$title',url='$url' WHERE rec_id=$id");
         
         //redirectig to the display page.
         header("Location: listLinks.php");
@@ -44,7 +44,7 @@ $result = mysqli_query($db, "SELECT * FROM links WHERE rec_id=$id");
  
 while($res = mysqli_fetch_array($result))
 {
-    $number = $res['number'];
+    $number = $res['seqNumber'];
     $title = $res['title'];
     $url = $res['url'];
 }
@@ -57,15 +57,15 @@ while($res = mysqli_fetch_array($result))
     <form name="form1" method="post" action="editLinks.php">
         <table border="0">
             <tr> 
-                <td>Number</td>
+                <td>Link Number</td>
                 <td><input type="number" name="number" min="1" value="<?php echo $number;?>"></td>
             </tr>
             <tr> 
-                <td>Title</td>
+                <td>Link Title</td>
                 <td><input type="text" name="title" value="<?php echo $title;?>"></td>
             </tr>
             <tr> 
-                <td>URL</td>
+                <td>Link URL</td>
                 <td><input type="text" name="url" value="<?php echo $url;?>"></td>
             </tr>
             <tr>
