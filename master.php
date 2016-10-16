@@ -19,6 +19,9 @@
   input.sbutton {
       transform: translate(0%, 50%);
   }
+  th, td {
+      padding: 10px;
+  }
   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -37,10 +40,10 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="index.php">Technology Boot Camp</a></li>
-          <li><a href="chapter1.php">Security</a></li>
+<!--          <li><a href="chapter1.php">Security</a></li>
           <li><a href="chapter2.php">Infrastructure</a></li>
           <li><a href="chapter3.php">Mobile Development</a></li>
-<!--          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Chapter 4 <span class="caret"></span></a>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Chapter 4 <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#chapter41">Chapter 4-1</a></li>
               <li><a href="#chapter42">Chapter 4-2</a></li>

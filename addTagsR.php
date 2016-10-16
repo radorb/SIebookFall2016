@@ -6,13 +6,24 @@ include('master.php');
 include('session.php');
  
 if(isset($_POST['Submit'])) {
-    $id = $_POST['linkId'];
+    $id = (int)$_POST['linkId'];
     $tags = $_POST['tags'];
-        
+    
+    $sql = "SELECT tags FROM keywords WHERE links_rec_id = $id AND tags = '$tags'";
+    $result0 = mysqli_query($db,$sql);
+    $row0 = mysqli_fetch_array($result0,MYSQLI_ASSOC);
+    $active = $row0['active'];
+      
+    $count = mysqli_num_rows($result0);
+    
     // checking empty fields
-    if(empty($tags)) {                
+    if($count > 0 || empty($tags)) {                
+        if($count > 0) {
+            echo "<br/><font color='red'>Tag already exists.</font><br/>";
+        }
+        
         if(empty($tags)) {
-            echo "<br/><font color='red'>Tags field is empty.</font><br/>";
+            echo "<br/><font color='red'>Tag field is empty.</font><br/>";
         }
         
         //link to the previous page
@@ -28,8 +39,8 @@ if(isset($_POST['Submit'])) {
         $result = mysqli_query($db, "INSERT INTO keywords(rec_id,keyword,links_rec_id) VALUES('$largestNumber','$tags','$linkId')");
         
         //display success message
-        echo "<br/><font color='green'>Tags added successfully.";
-        echo "<br/><a href='listTags.php'>View Result</a>";
+        echo "<br/><font color='green'>Tag added successfully.";
+        echo "<br/><a href='listTags.php?id=$id'>View Result</a>";
     }
 }
 ?>

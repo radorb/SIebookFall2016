@@ -9,7 +9,7 @@ include('session.php');
     <br/><br/>
  
     <form action="addChaptersR.php" method="post" name="form1">
-        <table width="25%" border="0">
+        <table border="0">
             <tr> 
                 <td>Chapter Number</td>
                 <td><input type="number" name="number" min="1"></td>

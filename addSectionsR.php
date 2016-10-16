@@ -6,12 +6,23 @@ include('master.php');
 include('session.php');
  
 if(isset($_POST['Submit'])) {    
-    $id = $_POST['chapterId'];
-    $number = $_POST['number'];
+    $id = (int)$_POST['chapterId'];
+    $number = (int)$_POST['number'];
     $title = $_POST['title'];
-        
+    
+    $sql = "SELECT number FROM sections WHERE chapters_rec_id = $id AND number = $number";
+    $result0 = mysqli_query($db,$sql);
+    $row0 = mysqli_fetch_array($result0,MYSQLI_ASSOC);
+    $active = $row0['active'];
+      
+    $count = mysqli_num_rows($result0);
+    
     // checking empty fields
-    if(empty($number) || empty($title)) {                
+    if($count > 0 || empty($number) || empty($title)) {                
+        if($count > 0) {
+            echo "<br/><font color='red'>Section Number already exists.</font><br/>";
+        }
+        
         if(empty($number)) {
             echo "<br/><font color='red'>Section Number field is empty.</font><br/>";
         }
@@ -35,7 +46,7 @@ if(isset($_POST['Submit'])) {
         
         //display success message
         echo "<br/><font color='green'>Section added successfully.";
-        echo "<br/><a href='listSections.php'>View Result</a>";
+        echo "<br/><a href='listSections.php?id=$id'>View Result</a>";
     }
 }
 ?>

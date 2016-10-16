@@ -7,6 +7,7 @@ include('session.php');
 if(isset($_POST['update']))
 {    
     $id = (int)$_POST['id'];
+    $id2 = (int)$_POST['id2'];
     
     $number=(int)$_POST['number'];
     $title=$_POST['title'];   
@@ -25,13 +26,14 @@ if(isset($_POST['update']))
         $result = mysqli_query($db, "UPDATE sections SET number='$number',title='$title' WHERE rec_id=$id");
         
         //redirectig to the display page.
-        header("Location: listSections.php");
+        header("Location: listSections.php?id=$id2");
     }
 }
 ?>
 <?php
 //getting id from url
 $id = $_GET['id'];
+$id2 = $_GET['id2'];
  
 //selecting data associated with this particular id
 $result = mysqli_query($db, "SELECT * FROM sections WHERE rec_id=$id");
@@ -60,6 +62,7 @@ while($res = mysqli_fetch_array($result))
             <tr>
                 <td><input type="hidden" name="id" value="<?php echo $_GET['id'];?>"></td>
                 <td><input type="submit" name="update" value="Update"></td>
+                <td><input type="hidden" name="id2" value="<?php echo $_GET['id2'];?>"></td>
             </tr>
         </table>
     </form>

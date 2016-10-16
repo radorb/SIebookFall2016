@@ -4,13 +4,24 @@
 include_once("config.php");
 include('master.php');
 include('session.php');
- 
+
 if(isset($_POST['Submit'])) {    
-    $number = $_POST['number'];
+    $number = (int)$_POST['number'];
     $title = $_POST['title'];
-        
+    
+    $sql = "SELECT number FROM chapters WHERE number = $number";
+    $result0 = mysqli_query($db,$sql);
+    $row0 = mysqli_fetch_array($result0,MYSQLI_ASSOC);
+    $active = $row0['active'];
+      
+    $count = mysqli_num_rows($result0);
+    
     // checking empty fields
-    if(empty($number) || empty($title)) {                
+    if($count > 0 || empty($number) || empty($title)) {                
+        if($count > 0) {
+            echo "<br/><font color='red'>Chapter Number already exists.</font><br/>";
+        }
+        
         if(empty($number)) {
             echo "<br/><font color='red'>Chapter Number field is empty.</font><br/>";
         }

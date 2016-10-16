@@ -4,10 +4,11 @@ include("config.php");
  
 //getting id of the data from url
 $id = (int)$_GET['id'];
+$id2 = (int)$_GET['id2'];
  
 //deleting the row from table
 $result = mysqli_query($db, "DELETE FROM keywords WHERE rec_id=$id");
  
 //redirecting to the display page (index.php in our case)
-header("Location:listTags.php");
+header("Location:listTags.php?id=$id2");
 ?>

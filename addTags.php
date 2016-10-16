@@ -19,7 +19,7 @@ if(empty($id)) {
     <br/><br/>
     
     <form action="addTagsR.php" method="post" name="form1">
-        <table width="25%" border="0">
+        <table border="0">
             <input type="hidden" name="linkId" value="<?php echo $_GET["id"]; ?>">
             <tr> 
                 <td>Tags</td>
