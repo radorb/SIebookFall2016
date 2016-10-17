@@ -22,6 +22,16 @@
   th, td {
       padding: 10px;
   }
+  .list-group.panel > .list-group-item {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+.list-group-menu {
+  margin-left:20px;
+}
+.list-group-submenu {
+  margin-left:40px;
+}
   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
