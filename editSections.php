@@ -9,12 +9,12 @@ if(isset($_POST['update']))
     $id = (int)$_POST['id'];
     $id2 = (int)$_POST['id2'];
     
-    $number=(int)$_POST['number'];
+    $nnumber=(int)$_POST['number'];
     $title=$_POST['title'];   
     
     // checking empty fields
-    if(empty($number) || empty($title)) {            
-        if(empty($number)) {
+    if(empty($nnumber) || empty($title)) {            
+        if(empty($nnumber)) {
             echo "<br/><font color='red'>Section Number field is empty.</font><br/>";
         }
         
@@ -22,11 +22,27 @@ if(isset($_POST['update']))
             echo "<font color='red'>Section Title field is empty.</font><br/>";
         }   
     } else {    
-        //updating the table
-        $result = mysqli_query($db, "UPDATE sections SET number='$number',title='$title' WHERE rec_id=$id");
+        $result2 = mysqli_query($db, "SELECT * FROM sections WHERE rec_id=$id");
+ 
+        while($res = mysqli_fetch_array($result2))
+        {
+            $onumber = (int)$res['number'];
+        }
         
-        //redirectig to the display page.
-        header("Location: listSections.php?id=$id2");
+        if($nnumber == $onumber){
+            //updating the table
+            $result = mysqli_query($db, "UPDATE sections SET number='$nnumber',title='$title' WHERE rec_id=$id");
+        
+            //redirectig to the display page.
+            header("Location: listSections.php?id=$id2");
+        }  else {
+             //updating the table
+             $result3 = mysqli_query($db, "UPDATE sections SET number='$onumber' WHERE number=$nnumber AND chapters_rec_id=$id2");
+             $result4 = mysqli_query($db, "UPDATE sections SET number='$nnumber',title='$title' WHERE rec_id=$id");
+        
+             //redirectig to the display page.
+             header("Location: listSections.php?id=$id2");
+        }
     }
 }
 ?>

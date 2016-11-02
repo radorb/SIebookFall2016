@@ -34,7 +34,7 @@ echo        "</tr>";
         while($res = mysqli_fetch_array($quer)) {         
             echo "<tr>";
             echo "<td>".$res['number']."</td>";
-            echo "<td><a href=\"listLinks.php?id=$res[rec_id]\">".$res['title']."</a></td>";    
+            echo "<td><a href=\"listLinks.php?id=$res[rec_id]&id2=$id\">".$res['title']."</a></td>";    
             echo "<td><a href=\"editSections.php?id=$res[rec_id]&id2=$id\">Edit</a> | <a href=\"deleteSections.php?id=$res[rec_id]&id2=$id\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
         }
 echo    "</table>";

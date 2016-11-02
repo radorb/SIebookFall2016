@@ -10,6 +10,12 @@ echo "Data Error";
 exit;
 }
 
+@$id2=$_GET['id2']; // Use this line or below line if register_global is off
+if(strlen($id2) > 0 and !is_numeric($id2)){ // to check if $id is numeric data or not. 
+echo "Data Error";
+exit;
+}
+
 if(isset($id) and strlen($id) > 0){
 $quer3=mysqli_query($db, "SELECT * FROM links where sections_rec_id=$id order by seqNumber"); 
 }else{echo "Data Error";exit;} 
@@ -38,7 +44,7 @@ echo        "</tr>";
             echo "<td>".$res['seqNumber']."</td>";
             echo "<td><a href=\"listTags.php?id=$res[rec_id]\">".$res['title']."</a></td>";
             echo "<td>".$res['url']."</td>";
-            echo "<td><a href=\"editLinks.php?id=$res[rec_id]&id2=$id\">Edit</a> | <a href=\"deleteLinks.php?id=$res[rec_id]&id2=$id\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
+            echo "<td><a href=\"editLinks.php?id=$res[rec_id]&id2=$id&id3=$id2\">Edit</a> | <a href=\"deleteLinks.php?id=$res[rec_id]&id2=$id\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
         }
 echo    "</table>";
 echo "</div>";
