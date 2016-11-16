@@ -1,4 +1,5 @@
 <div id="body1" class="container-fluid" align = "center">
+<h3>Search</h3>
 <form action = "" method = "post">
 <input type = "text" name = "search" class = "sbox" autofocus="autofocus"/>
 <input type = "submit" class="sbutton" value = " Search "/>

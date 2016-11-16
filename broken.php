@@ -11,8 +11,7 @@ self.location='broken.php?cat=' + val + '&cat2=' + val2 ;
 <?php
 include('master.php');
 include("config.php");
-    
-echo "<br>";
+
 echo '<div id="body1" class="container-fluid" align = "center">';
 echo '<h3>Report Broken Link</h3>';
 echo '<br>';
@@ -47,7 +46,7 @@ $quer3="SELECT rec_id, title FROM links where sections_rec_id=$cat2 order by seq
 echo "<form method=post name=f1 action='brokenR.php'>";
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 //////////        Starting of first drop downlist /////////
-echo "<label>Select Chapter:&nbsp;</label><select name='cat' onchange=\"reload(this.form)\"><option value=''>Select Chapter</option>";
+echo "<label>Chapter:&nbsp;</label><select name='cat' onchange=\"reload(this.form)\"><option value=''>Select Chapter</option>";
 foreach ($db->query($quer2) as $noticia2) {
 if($noticia2['rec_id']==@$cat){echo "<option selected value='$noticia2[rec_id]'>$noticia2[title]</option>"."<BR>";}
 else{echo  "<option value='$noticia2[rec_id]'>$noticia2[title]</option>";}
@@ -58,7 +57,7 @@ echo '<br>';
 //////////////////  This will end the first drop down list ///////////
 
 //////////        Starting of second drop downlist /////////
-echo "<label>Select Chapter:&nbsp;</label><select name='cat2' onchange=\"reload(this.form)\"><option value=''>Select Section</option>";
+echo "<label>Section:&nbsp;</label><select name='cat2' onchange=\"reload(this.form)\"><option value=''>Select Section</option>";
 foreach ($db->query($quer) as $noticia) {
 if($noticia['rec_id']==@$cat2){echo "<option selected value='$noticia[rec_id]'>$noticia[title]</option>"."<BR>";}
 else{echo  "<option value='$noticia[rec_id]'>$noticia[title]</option>";}
@@ -69,7 +68,7 @@ echo '<br>';
 //////////////////  This will end the second drop down list ///////////
 
 //////////        Starting of third drop downlist /////////
-echo "<label>Select Link:&nbsp;</label><select name='cat3'><option value=''>Select Link</option>";
+echo "<label>Link:&nbsp;</label><select name='cat3'><option value=''>Select Link</option>";
 foreach ($db->query($quer3) as $noticia3) {
 echo  "<option value='$noticia3[rec_id]'>$noticia3[title]</option>";
 }
