@@ -113,6 +113,9 @@ deleteDirectory('import/chapters');
 
 <div id="body1" class="container-fluid" align = "center">
     <br>
+    <a href="welcome.php">Welcome Menu</a>
+    <br>
+    <br>
     <?php if($message) echo "<p>$message</p>"; ?>
     <form enctype="multipart/form-data" method="post" action="">
     <label>Choose a zip file to import: <input type="file" name="zip_file" /></label>
