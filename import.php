@@ -51,8 +51,9 @@ foreach(glob('import/chapters/*', GLOB_ONLYDIR) as $chapter)
         foreach(glob($chapter.'/*.txt') as $section) 
 	    {	
 		$sectiontitle=trim($section,"import/chapters/.'$chapter'./.txt");
+                $sectiontitle2 = substr($sectiontitle, 4);
                 
-                $result2 = mysqli_query($db, "INSERT INTO sections(rec_id,number,title,chapters_rec_id) VALUES('$sectionrecid','$sectionseqnum','$sectiontitle','$chapterrecid')");
+                $result2 = mysqli_query($db, "INSERT INTO sections(rec_id,number,title,chapters_rec_id) VALUES('$sectionrecid','$sectionseqnum','$sectiontitle2','$chapterrecid')");
                 
                 $contents = file_get_contents($section);
                 $pollfields = explode(';', $contents);
@@ -101,7 +102,7 @@ foreach(glob('import/chapters/*', GLOB_ONLYDIR) as $chapter)
         } 
         return rmdir($dir); 
     }
-deleteDirectory('import/'.$name[0]);
+deleteDirectory('import/chapters');
 		$message = "Your .zip file was imported.";
 	} else {	
 		$message = "There was a problem with the import. Please try again.";
