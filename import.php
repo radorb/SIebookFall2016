@@ -78,7 +78,7 @@ foreach(glob('import/chapters/*', GLOB_ONLYDIR) as $chapter)
                             $result5 = mysqli_query($db, "INSERT INTO keywords(rec_id,keyword,links_rec_id) VALUES('$tagrecid','$field','$lrid')");
                             
                             ++$tagrecid;
-                            $fieldcount=$fieldcount-$fieldcount;
+                            $fieldcount=0;
                         }
                         ++$fieldcount;
                     }
