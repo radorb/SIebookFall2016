@@ -16,7 +16,7 @@ if($login_session == 'infrastructure'){
 }
 
 if($login_session == 'mobile'){
-    $result1 = mysqli_query($db, "SELECT * FROM chapters WHERE title='Mobile Development'");
+    $result1 = mysqli_query($db, "SELECT * FROM chapters WHERE title='Mobile'");
 }
 ?>
  
