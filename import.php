@@ -50,10 +50,11 @@ foreach(glob('import/chapters/*', GLOB_ONLYDIR) as $chapter)
         
         foreach(glob($chapter.'/*.txt') as $section) 
 	    {	
-		$sectiontitle=trim($section,"import/chapters/.'$chapter'./.txt");
-                $sectiontitle2 = substr($sectiontitle, 4);
+		$sectiontitle = ltrim($section,"import/chapters/.'$chapter'./");
+		$sectiontitle = rtrim($sectiontitle,".txt");
+		$sectiontitle = substr($sectiontitle, 4);
                 
-                $result2 = mysqli_query($db, "INSERT INTO sections(rec_id,number,title,chapters_rec_id) VALUES('$sectionrecid','$sectionseqnum','$sectiontitle2','$chapterrecid')");
+                $result2 = mysqli_query($db, "INSERT INTO sections(rec_id,number,title,chapters_rec_id) VALUES('$sectionrecid','$sectionseqnum','$sectiontitle','$chapterrecid')");
                 
                 $contents = file_get_contents($section);
                 $pollfields = explode(';', $contents);
