@@ -43,7 +43,7 @@ $quer3="SELECT rec_id, title FROM links where sections_rec_id=$cat2 order by seq
 }else{$quer3="SELECT rec_id, title FROM links order by seqNumber"; } 
 ////////// end of query for third subcategory drop down list box ///////////////////////////
 
-echo "<form method=post name=f1 action='brokenR.php'>";
+echo '<form action="brokenR.php" method="post" name="form1">';
 /// Add your form processing page address to action in above line. Example  action=dd-check.php////
 //////////        Starting of first drop downlist /////////
 echo "<label>Chapter:&nbsp;</label><select name='cat' onchange=\"reload(this.form)\"><option value=''>Select Chapter</option>";
@@ -77,7 +77,7 @@ echo "</select>";
 //// Add your other form fields as needed here/////
 echo '<br>';
 echo '<br>';
-echo     '<input type = "submit" value = " Submit "/>';
+echo     '<input type="submit" name="Submit" value="Submit"/>';
 echo "</form>";
 ?>
 

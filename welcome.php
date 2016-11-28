@@ -6,6 +6,7 @@
 <div id="body1" class="container-fluid">
     <h1>Welcome, <?php echo $login_session; ?></h1>
     <p><a href="listChapters.php">Edit Chapters, Sections, Links and Tags</a></p>
+    <p><a href="listBroken.php">Reported Broken Links</a></p>
 
     <?php
         if($login_session == 'admin'){
