@@ -1,4 +1,5 @@
 <div id="body1" class="container-fluid" align = "center">
+<h3>Report Broken Link</h3>
 <?php
 include("config.php");
 include('master.php');
