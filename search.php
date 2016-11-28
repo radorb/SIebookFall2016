@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $keyword = mysqli_real_escape_string($db,$_POST['search']);
       
       if($keyword == ""){
-          echo '<h3 align="center">Keyword Results</h3><br>';
+          echo '<h3 align="center">Link Tag Results</h3><br>';
           echo '<p align="center">0 results</p>';
           echo '<br><h3 align="center">Link Title Results</h3><br>';
           echo '<p align="center">0 results</p>';
@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $sql1 = "(SELECT links_rec_id FROM keywords WHERE keyword LIKE '%" . $keyword ."%')";
       $result1 = mysqli_query($db,$sql1);
       
-      echo '<h3 align="center">Tag Results</h3><br>';
+      echo '<h3 align="center">Link Tag Results</h3><br>';
       
       if ($result1->num_rows > 0) {
      // output data of each row
